@@ -33,6 +33,4 @@ spec:
         deadline: "2022-01-04"
       macos_settings:
         custom_settings:
-          - path/to/profile1.mobileconfig
-          - path/to/profile2.mobileconfig
         enable_disk_encryption: true
