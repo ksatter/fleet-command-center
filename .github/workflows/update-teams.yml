@@ -3,7 +3,7 @@ run-name: ${{ github.actor}} is updating teams
 on: [push]
 jobs:
   update-teams:
-    runs-on: 'composite'
+    runs-on: ubuntu-latest
     steps:
       - name: Install fleetctl
         run: npm install -g fleetctl
