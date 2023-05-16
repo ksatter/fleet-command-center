@@ -5,6 +5,9 @@ jobs:
   update-teams:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@latest
+
       - name: Install fleetctl
         run: npm install -g fleetctl
         shell: bash
