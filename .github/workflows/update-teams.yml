@@ -1,0 +1,20 @@
+name: Update Fleet teams
+run-name: ${{ github.actor}} is updating teams
+on: [push]
+jobs:
+  Update:
+    runs_on: 'composite'
+      steps:
+        - name: Install fleetctl
+          run: npm install -g fleetctl
+          shell: bash
+
+        - name: Configure fleetctl
+          run: fleetctl config set --address ${{ secrets.FLEET_URL }} --token ${{ secrets.FLEET_API_TOKEN }}
+          shell: bash
+
+        - name: apply teams
+          run: |
+            cat teams/*.yml > teams.yml
+            fleetctl apply -f teams.yml
+          shell: bash
